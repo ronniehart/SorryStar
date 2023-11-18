@@ -1,0 +1,22 @@
+version: "3.4"
+services:
+    nopcommerce_web:
+        build: .
+        container_name: nopcommerce
+        environment:
+          ConnectionStrings__ConnectionString: "Host=nopcommerce_database;Database=postgres;Username=sorryadmin;Password=sorrystarpasswd"
+          ConnectionStrings__DataProvider: "postgresql"
+        ports:
+            - "80:80"
+        depends_on:
+            - nopcommerce_database
+    nopcommerce_database:
+        image: "postgres:latest"
+        container_name: nopcommerce_postgres_server
+        restart: "always"
+        environment:
+          POSTGRES_USER: "sorryadmin"
+          POSTGRES_PASSWORD: "sorrystarpasswd"
+          POSTGRES_DB: "postgres"
+        ports:
+            - "5432:5432"
