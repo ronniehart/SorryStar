@@ -1,7 +1,7 @@
 ﻿{
   "SystemName": "SorryStar",
   "FriendlyName": "Sorry Star",
-  "SupportRTL": true,
+  "SupportRTL": false,
   "PreviewImageUrl": "~/Themes/SorryStar/preview.jpg",
   "PreviewText": "Soooorrrry Star"
 }

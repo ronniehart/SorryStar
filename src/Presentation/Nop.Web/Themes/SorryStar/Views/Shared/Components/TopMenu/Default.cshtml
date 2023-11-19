@@ -1,0 +1,122 @@
+﻿@model TopMenuModel
+
+@using Nop.Core.Domain.Catalog
+@using Nop.Core.Domain.Topics
+
+<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    @if (Model.DisplayHomepageMenuItem)
+    {
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.RouteUrl("Homepage")">@T("Homepage")</a>
+        </li>
+    }
+    @foreach (var topic in Model.Topics)
+    {
+        <li class="nav-item">
+            <a class="nav-link" href="@(Url.RouteUrl<Topic>(new { SeName = topic.SeName }))">@topic.Name</a>
+        </li>
+    }
+    @if (!Model.UseAjaxMenu)
+    {
+        var rootCategories = Model.Categories.Where(x => x.IncludeInTopMenu).ToList();
+        @foreach (var category in rootCategories)
+        {
+            var categoryLineModel = new TopMenuModel.CategoryLineModel
+                    {
+                        Category = category
+                    };
+            CategoryLine(categoryLineModel);
+        }
+
+    }
+    @if (Model.NewProductsEnabled && Model.DisplayNewProductsMenuItem)
+    {
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.RouteUrl("NewProducts")">@T("Products.NewProducts")</a>
+        </li>
+    }
+    @if (Model.DisplayProductSearchMenuItem)
+    {
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.RouteUrl("ProductSearch")">@T("Search")</a>
+        </li>
+    }
+    @if (Model.BlogEnabled && Model.DisplayBlogMenuItem)
+    {
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.RouteUrl("Blog")">@T("Blog")</a>
+        </li>
+    }
+    @if (Model.ForumEnabled && Model.DisplayForumsMenuItem)
+    {
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.RouteUrl("Boards")">@T("Forum.Forums")</a>
+        </li>
+    }
+    @if (Model.DisplayContactUsMenuItem)
+    {
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.RouteUrl("ContactUs")">@T("ContactUs")</a>
+        </li>
+    }
+</ul>
+
+@functions {
+    void CategoryLine(TopMenuModel.CategoryLineModel lineModel)
+    {
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+               id="@lineModel.Category.SeName"
+               href="@(Url.RouteUrl<Category>(new { SeName = lineModel.Category.SeName }))"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false">
+                @lineModel.Category.Name
+            </a>
+
+            @{
+                var subCategories = lineModel.Category.SubCategories.ToList();
+                <div class="dropdown-menu" aria-labelledby="@lineModel.Category.SeName">
+                    @foreach (var subCategory in subCategories)
+                    {
+                        <a class="dropdown-item" href="@(Url.RouteUrl<Category>(new { SeName = subCategory.SeName }))">
+                            @subCategory.Name
+                        </a>
+                    }
+                </div>
+            }
+        </li>
+    }
+}
+
+@{
+    if (Model.UseAjaxMenu)
+    {
+        <script asp-location="Footer">
+            $(document).ready(function () {
+                $('.menu-toggle').on('click', function () {
+                    $(this).siblings('.top-menu.mobile').slideToggle('slow');
+                });
+                var localized_data = {
+                    AjaxFailure: "@T("MainMenu.AjaxFailure")"
+                };
+                mainMenu.init('@Url.RouteUrl("GetCatalogRoot")', '@Url.RouteUrl("GetCatalogSubCategories")', 'ul.top-menu.notmobile', 'ul.top-menu.mobile', localized_data);
+            });
+        </script>
+
+        <script src="~/js/public.menu.js" asp-location="Footer"></script>
+    }
+    else
+    {
+        <script asp-location="Footer">
+            $(document).ready(function () {
+                $('.menu-toggle').on('click', function () {
+                    $(this).siblings('.top-menu.mobile').slideToggle('slow');
+                });
+                $('.top-menu.mobile .sublist-toggle').on('click', function () {
+                    $(this).siblings('.sublist').slideToggle('slow');
+                });
+            });
+        </script>
+    }
+}
