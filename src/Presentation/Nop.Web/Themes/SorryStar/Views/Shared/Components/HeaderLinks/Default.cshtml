@@ -29,13 +29,13 @@ else
     <li class="nav-item">
         <a href="@Url.RouteUrl("Wishlist")" class="nav-link" style="position: relative;">
             <i class="fa-solid fa-thumbtack"></i>
-            @if (Model.WishlistItems > 0)
-            {
-                <span class="nav-quantity">@T("Wishlist.HeaderQuantity", Model.WishlistItems)</span>
-            }
             @if (Model.WishlistItems > 9)
             {
-                <span class="nav-quantity">@T("Wishlist.HeaderQuantity", "+")</span>
+            <span class="nav-quantity">@T("Wishlist.HeaderQuantity", "+")</span>
+            }
+            else if (Model.WishlistItems > 0)
+            {
+                <span class="nav-quantity">@T("Wishlist.HeaderQuantity", Model.WishlistItems)</span>
             }
         </a>
     </li>
@@ -45,13 +45,13 @@ else
     <li class="nav-item">
         <a href="@Url.RouteUrl("ShoppingCart")" class="nav-link" style="position: relative;">
             <i class="fa-solid fa-cart-shopping"></i>
-            @if (Model.ShoppingCartItems > 0)
-            {
-                <span class="nav-quantity">@T("ShoppingCart.HeaderQuantity", Model.ShoppingCartItems)</span>
-            }
             @if (Model.ShoppingCartItems > 9)
             {
                 <span class="nav-quantity">@T("ShoppingCart.HeaderQuantity", "+")</span>
+            }
+            else if (Model.ShoppingCartItems > 0)
+            {
+                <span class="nav-quantity">@T("ShoppingCart.HeaderQuantity", Model.ShoppingCartItems)</span>
             }
         </a>
     </li>
