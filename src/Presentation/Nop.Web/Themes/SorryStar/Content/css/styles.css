@@ -74,7 +74,7 @@ body {
   max-width: 100%;
   overflow-x: hidden;
   background-color: #fff;
-  font: normal 14px Questrial, Arial, Helvetica, sans-serif;
+  font: normal 14px Questrial, Arial, Helvetica, sans-serif !important;
   color: #777;
 }
 
@@ -158,6 +158,13 @@ label, label + * {
   margin: 0 auto;
 }
 
+.master-wrapper-content-fullwidth {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
 .master-column-wrapper {
   position: relative;
   z-index: 0;
@@ -185,7 +192,7 @@ label, label + * {
 
 .page {
   min-height: 200px;
-  text-align: center;
+  text-align: left;
 }
 
 .page-title {
@@ -1077,7 +1084,8 @@ label, label + * {
 /************ CUSTOM THEME HEADER **************/
 
 .nav-item {
-    margin: 0 10px;
+  margin: 0 10px;
+  font-size: 12pt;
 }
 
 .nav-select {
@@ -1094,21 +1102,21 @@ label, label + * {
 }
 
 .nav-quantity {
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(10%, -5%);
-    padding: 0px 5px;
-    border: 1px solid white;
-    border-radius: 50%;
-    background-color: blue;
-    color: white;
-    font-size: 8pt;
-    font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(10%, -5%);
+  padding: 0px 5px;
+  border: 1px solid white;
+  border-radius: 50%;
+  background-color: blue;
+  color: white;
+  font-size: 8pt;
+  font-weight: bold;
 }
 
 .navbar-brand img {
-    height: 60px;
+  height: 60px;
 }
 
 /*********** FOOTER ***********/
@@ -1512,6 +1520,17 @@ label, label + * {
     display: inline-block;
     margin: 10px;
   }
+
+.homepage-banner {
+  background-image: url('../images/homepage-logo.png');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 600px;
+  left: 0;
+  top: 0;
+  margin-bottom: 20px;
+}
 
 /********** CATEGORY PAGE **********/
 
@@ -6550,6 +6569,10 @@ label, label + * {
 }
 
 @media all and (max-width: 1000px) {
+  .homepage-banner {
+    height: 300px;
+  }
+
   /*** GLOBAL TABLES ***/
 
   .cart {
@@ -8236,7 +8259,7 @@ label, label + * {
   /*** TOPICS ***/
 
   .center-1 .topic-block-title {
-    text-align: center;
+    text-align: left;
   }
 
   .topic-page p {
