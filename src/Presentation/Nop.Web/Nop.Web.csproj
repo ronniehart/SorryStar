@@ -64,6 +64,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Themes\SorryStar\Views\Product\_ProductBreadcrumb.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
     <Content Update="Themes\SorryStar\Views\Shared\Components\CurrencySelector\Default.cshtml">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>

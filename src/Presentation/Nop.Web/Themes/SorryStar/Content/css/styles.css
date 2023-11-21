@@ -1077,7 +1077,7 @@ label, label + * {
 /************ CUSTOM THEME HEADER **************/
 
 .nav-item {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 
 .nav-select {
@@ -1094,21 +1094,21 @@ label, label + * {
 }
 
 .nav-quantity {
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(10%, -5%);
-    padding: 0px 5px;
-    border: 1px solid white;
-    border-radius: 50%;
-    background-color: blue;
-    color: white;
-    font-size: 8pt;
-    font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(10%, -5%);
+  padding: 0px 5px;
+  border: 1px solid white;
+  border-radius: 50%;
+  background-color: blue;
+  color: white;
+  font-size: 8pt;
+  font-weight: bold;
 }
 
 .navbar-brand img {
-    height: 60px;
+  height: 60px;
 }
 
 /*********** FOOTER ***********/
@@ -1517,8 +1517,8 @@ label, label + * {
 
 .breadcrumb {
   margin: 0 0 50px;
-  background-color: #f6f6f6;
-  padding: 5px 10px;
+  background-color: white !important;
+  padding: 0 !important;
 }
 
   .breadcrumb ul {
@@ -1527,22 +1527,26 @@ label, label + * {
 
   .breadcrumb li {
     display: inline-block;
+    background-color: #f6f6f6;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 25px;
   }
+
+    .breadcrumb li:hover {
+      background-color: #dddddd;
+    }
 
     .breadcrumb li * {
       display: inline-block;
       margin: 0 5px;
       font-size: 14px; /*reset zeroing*/
       line-height: 32px;
+      color: black;
     }
 
   .breadcrumb strong {
     font-weight: normal;
-  }
-
-  .breadcrumb a:hover,
-  .breadcrumb a:focus {
-    color: #4ab2f1;
   }
 
 .category-description,
