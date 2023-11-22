@@ -27,10 +27,10 @@
     }
 }
 
-@await RenderSectionAsync("Breadcrumb", false)
-
 <div class="master-wrapper-content">
     <div class="master-column-wrapper">
+        @await RenderSectionAsync("Breadcrumb", false)
+
         <div class="side-2">
             @if (IsSectionDefined("left"))
             {
