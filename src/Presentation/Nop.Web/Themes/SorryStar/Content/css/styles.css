@@ -1536,8 +1536,8 @@ label, label + * {
 
 .breadcrumb {
   margin: 0 0 50px;
-  background-color: #f6f6f6;
-  padding: 5px 10px;
+  background-color: white !important;
+  padding: 0 !important;
 }
 
   .breadcrumb ul {
@@ -1546,23 +1546,37 @@ label, label + * {
 
   .breadcrumb li {
     display: inline-block;
+    background-color: #f6f6f6;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 25px;
   }
+
+    .breadcrumb li:hover {
+      background-color: #dddddd;
+    }
 
     .breadcrumb li * {
       display: inline-block;
       margin: 0 5px;
       font-size: 14px; /*reset zeroing*/
       line-height: 32px;
+      color: black;
     }
 
-  .breadcrumb strong {
-    font-weight: normal;
-  }
+.breadcrumb-active {
+  box-shadow: 0px 0px 8px #4ab2f1;
+}
 
-  .breadcrumb a:hover,
-  .breadcrumb a:focus {
-    color: #4ab2f1;
-  }
+    .breadcrumb a:hover {
+      text-decoration: none;
+      color: black;
+    }
+
+.delimiter {
+  font-size: 14px;
+  background-color: white !important;
+}
 
 .category-description,
 .manufacturer-description,
