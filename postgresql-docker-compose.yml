@@ -18,5 +18,7 @@ services:
           POSTGRES_USER: "sorryadmin"
           POSTGRES_PASSWORD: "sorrystarpasswd"
           POSTGRES_DB: "postgres"
+        volumes:
+          - ./docker-postgres-init.sql:/docker-entrypoint-initdb.d/docker-postgres-init.sql
         ports:
             - "5432:5432"
