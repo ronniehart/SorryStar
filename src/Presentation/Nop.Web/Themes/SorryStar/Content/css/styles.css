@@ -192,6 +192,7 @@ label, label + * {
   }
 
 .page {
+  margin-top: 10px;
   min-height: 200px;
   text-align: left;
 }
@@ -427,9 +428,6 @@ label, label + * {
 .cart th,
 .data-table th,
 .forum-table th {
-  border-width: 1px 1px 0;
-  border-style: solid;
-  border-color: #ddd;
   background-color: #f6f6f6;
   padding: 10px;
   white-space: nowrap;
@@ -459,9 +457,6 @@ label, label + * {
 .data-table td,
 .forum-table td {
   min-width: 50px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent #ddd #ddd;
   background-color: #fff;
   padding: 20px;
   color: #444;
