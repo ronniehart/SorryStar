@@ -160,10 +160,10 @@ label, label + * {
 }
 
 .master-wrapper-content-fullwidth {
-    position: relative;
-    z-index: 0;
-    width: 100%;
-    margin: 0 auto;
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .master-column-wrapper {
@@ -200,7 +200,6 @@ label, label + * {
 .page-title {
   min-height: 50px;
   margin: 0 0 25px;
-  border-bottom: 1px solid #ddd;
   padding: 6px 10px;
 }
 
@@ -1568,10 +1567,10 @@ label, label + * {
   box-shadow: 0px 0px 8px #4ab2f1;
 }
 
-    .breadcrumb a:hover {
-      text-decoration: none;
-      color: black;
-    }
+.breadcrumb a:hover {
+  text-decoration: none;
+  color: black;
+}
 
 .delimiter {
   font-size: 14px;
@@ -4129,7 +4128,6 @@ label, label + * {
     }
 
 .shopping-cart-page .common-buttons {
-  margin: 0 0 60px;
   background-color: #f6f6f6;
   padding: 20px;
   font-size: 0;
@@ -4214,31 +4212,25 @@ label, label + * {
     margin: 3px;
   }
 
-.cart-footer {
-  margin: 0 0 50px;
-  border-top: 1px solid #ddd;
+.cart-footer:after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
-  .cart-footer:after {
-    content: "";
-    display: block;
-    clear: both;
-  }
+.cart-footer .totals {
+  width: 350px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  color: #444;
+}
 
-  .cart-footer .totals {
-    width: 350px;
-    max-width: 100%;
-    margin: 0 auto 50px;
-    background-color: #f9f9f9;
-    padding: 10px;
-    color: #444;
-  }
-
-  .cart-footer .total-info {
-    margin: 0 0 20px;
-    border-bottom: 1px solid #ddd;
-    padding: 5px 30px 15px;
-  }
+.cart-footer .total-info {
+  margin: 0 0 20px;
+  border-bottom: 1px solid #ddd;
+  padding: 5px 30px 15px;
+}
 
 .cart-total td {
   width: 50%;
@@ -4279,7 +4271,14 @@ label, label + * {
   padding: 0 30px;
 }
 
+  .terms-of-service input {
+    float: left;
+    width: 15px;
+    height: 15px;
+  }
+
   .terms-of-service label {
+    display: inline;
     cursor: pointer;
   }
 
@@ -4330,7 +4329,6 @@ label, label + * {
 }
 
   .cart-collaterals > div {
-    max-width: 400px;
     margin: 0 0 50px;
   }
 
@@ -4369,6 +4367,14 @@ label, label + * {
   .cart-collaterals .coupon-code {
     overflow: hidden;
   }
+
+    .cart-collaterals .coupon-code input {
+      border-radius: 5px 0 0 5px;
+    }
+
+    .cart-collaterals .coupon-code button {
+      border-radius: 0 5px 5px 0;
+    }
 
     .cart-collaterals .coupon-code input[type="text"] {
       float: left;
@@ -8699,4 +8705,14 @@ label, label + * {
 .swiper-pagination-bullet-active {
   padding: 5px;
   background-color: #4ab2f1;
+}
+
+
+/* SORRY STAR THEME */
+
+.card {
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
 }
