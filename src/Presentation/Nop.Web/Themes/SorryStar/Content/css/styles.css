@@ -461,6 +461,10 @@ label, label + * {
   color: #444;
 }
 
+.cart td.product-picture img {
+    width: 128px;
+}
+
 .forum-table td {
   min-width: 90px;
   padding: 10px;
@@ -6595,7 +6599,7 @@ label, label + * {
   /*** GLOBAL TABLES ***/
 
   .cart {
-    display: block;
+    display: inline-block;
   }
 
     .cart colgroup,
@@ -6614,6 +6618,8 @@ label, label + * {
       width: 100%;
       margin: 40px 0 0;
       border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
     }
 
     .cart td {
@@ -6623,16 +6629,17 @@ label, label + * {
     }
 
       .cart td.remove-from-cart {
-        margin: 0 0 15px;
-        border-bottom: 1px solid #ddd;
         background-color: #eee;
         padding: 10px;
       }
 
       .cart td.product-picture {
-        border-top: 1px solid #ddd;
         padding: 15px 10px 5px;
       }
+
+        .cart td.product-picture img {
+          width: 100%;
+        }
 
       .cart td.product {
         min-width: 0;
@@ -6809,8 +6816,8 @@ label, label + * {
   /*** GLOBAL TABLES ***/
 
   .cart tr {
-    width: 46%;
-    margin: 40px 2% 0;
+    width: 100%;
+    margin-bottom: 5px;
   }
 
     .cart tr:nth-child(2n+1) {
